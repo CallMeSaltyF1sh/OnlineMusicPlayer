@@ -1,0 +1,102 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  position: relative;
+  color: #fff;
+  background: #000;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+header,.left,.right{
+  position: absolute;
+}
+ul li{
+  list-style: none;
+}
+header{
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  height: 150px;
+  border: 1px solid #fff;
+}
+h1{
+  height: 70px;
+  line-height: 70px;
+  font-size: 50px;
+  margin: 5px auto;
+}
+.left{
+  left: 10px;
+  top: 170px;
+  bottom: 10px;
+  width: 220px;
+  border: 1px solid #fff;
+}
+.left ul{
+  overflow: auto;
+}
+.left ul li{
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.left ul li.selected{
+  color: green;
+}
+.right{
+  top: 170px;
+  right: 10px;
+  bottom: 10px;
+  left: 240px;
+  border: 1px solid #fff;
+}
+
+
+#type{
+  display: inline-block;
+  margin: 0 auto;
+}
+#type:after{
+  display: block;
+  content: '';
+  clear: both;
+}
+#type li{
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  width: 80px;
+  margin-bottom: 5px;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
+#type li:first-child{
+  border-left: 1px solid #fff;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#type li:last-child{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#type .selected{
+  background: #fff;
+  color: #000;
+}
+
+#vol{
+  display: inline-block;
+  font-size: 20px;
+  line-height: 22px;
+}
