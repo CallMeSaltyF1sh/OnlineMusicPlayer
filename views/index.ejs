@@ -12,9 +12,15 @@
         <li data-type="column" class="selected">Column</li>
       </ul>
       <p>
-        <div id='vol'>Volume</div> <input id="volume" type="range" min="0" max="100" value="60"/>
+        Volume <input id="volume" type="range" min="0" max="100" value="60"/>
       </p>
     </header>
+
+    <label for="file">
+        <input type="file" id="upload" name="file" value="Upload Music">
+        <input type="button" id="btn" value="Upload Music">
+    </label>
+    
     <div class="left">
       <ul id="list">
         <% music.forEach(function(name){ %>
@@ -25,6 +31,8 @@
     </div>
     <div class="right" id="box"></div>
     
+    
+    <script type="text/javascript" src="/javascripts/MusicVisualizer.js"></script>
     <script type="text/javascript" src="/javascripts/index.js"></script>
   </body>
 </html>

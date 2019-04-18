@@ -13,6 +13,7 @@ body {
   background: #000;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: center;
+  font-size: 100%;
 }
 header,.left,.right{
   position: absolute;
@@ -21,9 +22,9 @@ ul li{
   list-style: none;
 }
 header{
-  left: 10px;
+  left: 1%;
   top: 10px;
-  right: 10px;
+  right: 1%;
   height: 150px;
   border: 1px solid #fff;
 }
@@ -31,13 +32,46 @@ h1{
   height: 70px;
   line-height: 70px;
   font-size: 50px;
-  margin: 5px auto;
+  margin: 4px auto;
 }
-.left{
-  left: 10px;
+
+/*上传歌曲*/
+label[for="file"]{
+  position: absolute;
   top: 170px;
+  left: 1%;
+  width: 16%;
+  height: 30px;
+}
+label[for="file"]>input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  color: #fff;
+  background: #000;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: all .2s;
+}
+#upload{
+  -webkit-appearance: none;
+  opacity: 0;
+  z-index: 10;
+}
+#upload:hover+input{
+  color: green;
+  border-color: green;
+}
+
+/*曲目栏*/
+.left{
+  left: 1%;
+  top: 210px;
   bottom: 10px;
-  width: 220px;
+  width: 16%;
   border: 1px solid #fff;
 }
 .left ul{
@@ -48,15 +82,20 @@ h1{
   line-height: 30px;
   cursor: pointer;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.left ul li:hover{
+  color: #bbb;
 }
 .left ul li.selected{
   color: green;
 }
 .right{
   top: 170px;
-  right: 10px;
+  right: 1%;
   bottom: 10px;
-  left: 240px;
+  left: 18%;
   border: 1px solid #fff;
 }
 
@@ -72,10 +111,10 @@ h1{
 }
 #type li{
   float: left;
-  height: 30px;
-  line-height: 30px;
+  height: 28px;
+  line-height: 28px;
   width: 80px;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   border-top: 1px solid #fff;
   border-right: 1px solid #fff;
   border-bottom: 1px solid #fff;
@@ -97,6 +136,160 @@ h1{
 
 #vol{
   display: inline-block;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 22px;
+}
+
+input[type="range"]{
+  -webkit-appearance: none;
+  height: 8px;
+  background: #999;
+  border-radius: 10px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  background: #fff;
+  border-radius: 100%;
+}
+input[type="range"]::-moz-range-track{
+  height: 8px;
+  background: #999;
+  border-radius: 10px;
+  border: none;
+}
+input[type="range"]::-moz-range-thumb{
+  height: 12px;
+  width: 10px;
+  background: #fff;
+  border: none;
+  border-radius: 100%;
+}
+
+@media screen and (max-width:500px){
+  header{
+    height: 120px;
+  }
+  h1{
+    height: 55px;
+    margin: 2px auto;
+    line-height: 55px; 
+    font-size: 40px;
+  }
+  #type li{
+    width: 70px;
+    height: 23px;
+    line-height: 23px;
+    margin-bottom: 2px;
+  }
+  .left,.right{
+    top: 140px;
+  }
+}
+
+@media screen and (min-width:1300px) and (max-width:1450px){
+  header{
+    height: 160px;
+  }
+  h1{
+    height: 73px;
+    line-height: 73px; 
+    margin: 7px auto; 
+    font-size: 53px;
+  }
+  #type li{
+    width: 83px;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 4px;
+  }
+  .left,.right{
+    top: 181px;
+  }
+  .left ul li{
+    font-size: 17px;
+    height: 31px;
+    line-height: 31px; 
+  }
+}
+
+@media screen and (min-width:1450px) and (max-width:1600px){
+  header{
+    height: 170px;
+  }
+  h1{
+    height: 75px;
+    line-height: 75px; 
+    margin: 7px auto; 
+    font-size: 55px;
+  }
+  #type li{
+    width: 85px;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  .left,.right{
+    top: 193px;
+  }
+  .left ul li{
+    font-size: 18px;
+    height: 32px;
+    line-height: 32px; 
+  }
+}
+@media screen and (min-width:1600px) and (max-width:1800px){
+  header{
+    height: 185px;
+  }
+  h1{
+    height: 78px;
+    line-height: 78px; 
+    margin: 9px auto; 
+    font-size: 58px;
+  }
+  #type li{
+    width: 87px;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 7px;
+    font-size: 20px;
+  }
+  .left,.right{
+    top: 205px;
+  }
+  .left ul li{
+    font-size: 20px;
+    height: 34px;
+    line-height: 34px; 
+  }
+}
+@media screen and (min-width:1800px){
+  header{
+    height: 200px;
+  }
+  h1{
+    height: 82px;
+    line-height: 82px; 
+    margin: 9px auto; 
+    font-size: 62px;
+  }
+  #type li{
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 9px;
+    font-size: 22px;
+  }
+  .left,.right{
+    top: 218px;
+  }
+  .left ul li{
+    font-size: 22px;
+    height: 38px;
+    line-height: 38px; 
+  }
 }
