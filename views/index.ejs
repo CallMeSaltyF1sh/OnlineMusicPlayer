@@ -3,6 +3,7 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
   </head>
   <body>
     <header>
@@ -13,11 +14,12 @@
       </ul>
       <p>
         Volume <input id="volume" type="range" min="0" max="100" value="60"/>
+        &nbsp;&nbsp;&nbsp;<i class="fa fa-play" id="pause"></i>
       </p>
     </header>
 
     <label for="file">
-        <input type="file" id="upload" name="file" value="Upload Music">
+        <input type="file" id="upload" name="file" value="Upload Music" onchange="upload(this);">
         <input type="button" id="btn" value="Upload Music">
     </label>
     

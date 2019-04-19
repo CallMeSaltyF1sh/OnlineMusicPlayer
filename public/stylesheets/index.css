@@ -168,6 +168,10 @@ input[type="range"]::-moz-range-thumb{
   border-radius: 100%;
 }
 
+#pause{
+  cursor: pointer;
+}
+
 @media screen and (max-width:500px){
   header{
     height: 120px;
