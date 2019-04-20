@@ -176,9 +176,39 @@ function draw(arr) {
             o.x = o.x > width ? 0 : o.x;  //dot的x大于canvas宽度则置零
             o.y += o.dy;
             o.y = o.y > height ? 0 : o.y;
+        }else if(draw.type == 'star') {
+            let r = 5 + arr[i]/256 * (height>width?width:height)/60;
+            let R = 8 + arr[i]/256 * (height>width?width:height)/30;
+            
+            drawStar(ctx,r,R,o.x,o.y,o.rot);
+            /*
+            if(o.direction==0){
+                o.x += o.dx;
+                o.x = o.x>width ? 0:o.x;
+            }else{
+                o.x -= o.dx;
+                o.x = o.x<0 ? width:o.x;
+            }
+            */
+            o.y -= o.dy;
+            o.y = o.y < 0 ? height : o.y;  //dot的x大于canvas宽度则置零
         }
 
     }
+}
+
+function drawStar(ctx,r,R,x,y,rot){
+    ctx.beginPath();
+    for(let i=0;i<5;i++){
+        ctx.lineTo(Math.cos((18+i*72-rot)/180 * Math.PI)*R + x,-Math.sin((18+i*72-rot)/180*Math.PI)*R+y);
+        ctx.lineTo(Math.cos((54+i*72-rot)/180 * Math.PI)*r + x,-Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
+    }
+    ctx.closePath();
+    let g = ctx.createRadialGradient(x, y, 0, x, y, R);
+    g.addColorStop(0, '#eee');
+    g.addColorStop(1, 'rgba(229,208,3,1)');
+    ctx.fillStyle = g;
+    ctx.fill();
 }
 
 
@@ -211,10 +241,12 @@ function getDots() {
         Dots.push({
             x: x,
             y: y,
-            dx: random(1, 2),
-            dy: random(0, 1),
+            dx: Math.random()*1.6+0.2,
+            dy: Math.random()+0.1,
             color: color,
-            cap: 0   //柱状图上的小帽距离最低端的距离
+            cap: 0,   //柱状图上的小帽距离最低端的距离
+            rot: random(0,360),
+            direction: random(0,1)
         });
     }
 }
