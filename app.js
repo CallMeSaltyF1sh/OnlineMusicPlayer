@@ -38,4 +38,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+const server = app.listen(9090, function () {
+  console.log('success!');
+})
+
 module.exports = app;

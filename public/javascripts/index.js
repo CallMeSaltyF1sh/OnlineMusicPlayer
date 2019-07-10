@@ -199,20 +199,27 @@ function draw(arr) {
 
 function drawStar(ctx,r,R,x,y,rot){
     ctx.beginPath();
+    
     for(let i=0;i<5;i++){
         ctx.lineTo(Math.cos((18+i*72-rot)/180 * Math.PI)*R + x,-Math.sin((18+i*72-rot)/180*Math.PI)*R+y);
         ctx.lineTo(Math.cos((54+i*72-rot)/180 * Math.PI)*r + x,-Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
     }
     ctx.closePath();
+    ctx.lineJoin = 'round';
     let g = ctx.createRadialGradient(x, y, 0, x, y, R);
     g.addColorStop(0, '#eee');
-    g.addColorStop(1, 'rgba(229,208,3,1)');
+    g.addColorStop(1, '#fb3');
+    ctx.strokeStyle = '#fb3';
     ctx.fillStyle = g;
+
+    ctx.shadowColor = '#555';
+    ctx.shadowBlur = 10;
+    ctx.stroke();
     ctx.fill();
 }
 
 
-draw.type = 'column';
+draw.type = 'dot';
 /*顶部切换样式*/
 let types = $('#type li');
 for (let i = 0, n = types.length; i < n; i++) {

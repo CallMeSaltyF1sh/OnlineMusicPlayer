@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/index.css'/>
-    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css"/>
-  </head>
-  <body>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/index.css' />
+  <link rel="stylesheet" href="/stylesheets/font-awesome.min.css" />
+</head>
+
+<body>
+  <input type="checkbox" id='menu'>
+  <label for='menu' class="menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav id="nav">
+    <label for="file">
+      <input type="file" id="upload" name="file" value="Upload" onchange="upload(this);">
+      <input type="button" id="btn" value="Upload">
+    </label>
+    <ul id="list">
+      <% music.forEach(function(name){ %>
+      <li title="<%= name %>"><%= name %></li>
+      <% }) %>
+    </ul>
+  </nav>
+
+  <main>
     <header>
       <h1><%= title %></h1>
       <ul class='type' id='type'>
-        <li data-type="dot">Dot</li>
+        <li data-type="dot" class="selected">Dot</li>
         <li data-type="star">Star</li>
-        <li data-type="column" class="selected">Column</li>
+        <li data-type="column">Column</li>
       </ul>
       <p>
-        Volume <input id="volume" type="range" min="0" max="100" value="60"/>
+        Volume <input id="volume" type="range" min="0" max="100" value="60" />
         &nbsp;&nbsp;&nbsp;<i class="fa fa-play" id="pause"></i>
       </p>
     </header>
 
-    <label for="file">
-        <input type="file" id="upload" name="file" value="Upload Music" onchange="upload(this);">
-        <input type="button" id="btn" value="Upload Music">
-    </label>
-    
-    <div class="left">
-      <ul id="list">
-        <% music.forEach(function(name){ %>
-          <li title="<%= name %>"><%= name %></li>
-        <% }) %>
-        
-      </ul>
-    </div>
-    <div class="right" id="box"></div>
-    
-    
-    <script type="text/javascript" src="/javascripts/MusicVisualizer.js"></script>
-    <script type="text/javascript" src="/javascripts/index.js"></script>
-  </body>
+    <div class='container' id='box'>
+    </div>  
+
+
+  </main>
+
+  <script type="text/javascript" src="/javascripts/MusicVisualizer.js"></script>
+  <script type="text/javascript" src="/javascripts/index.js"></script>
+</body>
+
 </html>
