@@ -160,7 +160,7 @@ function draw(arr) {
         } else if (draw.type == 'dot') {
             ctx.beginPath();   //重置当前的路径
 
-            let r = 10 + arr[i] / 256 * (height > width ? width : height) / 10;  //保证半径最小为10，大小随音频频率变化而变化
+            let r = 10 + arr[i] / 256 * (height > width ? width : height) / 12;  //保证半径最小为10，大小随音频频率变化而变化
             /**
              * context.arc(x,y,r,sAngle,eAngle,counterclockwise);
              */

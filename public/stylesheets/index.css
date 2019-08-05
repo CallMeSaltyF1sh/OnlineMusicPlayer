@@ -20,7 +20,7 @@ body {
   width: 100%;
   color: #fff;
   background: #000;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 100%;
 }
@@ -44,7 +44,7 @@ ul li{
   height: 50px;
   background-color: transparent;
   border-radius: 50%;
-  transition: all 250ms ease;
+  transition: all 500ms ease;
   cursor: pointer;
   z-index: 200;
 }
@@ -56,7 +56,7 @@ ul li{
   background-color: #444;
   float: left;
   transform-origin: center center;
-  transition: transform 250ms ease;
+  transition: transform 450ms ease;
   z-index: 200;
 }
 .menu span:nth-of-type(1) {
@@ -76,7 +76,7 @@ ul li{
   transition: all 500ms ease;
 }
 #menu:checked ~ .menu span {
-  background-color: #bbb;
+  background-color: #999;
   transition: transform 450ms ease;
 }
 #menu:checked ~ .menu span:nth-of-type(1) {
@@ -162,10 +162,10 @@ ul li{
 /*上传歌曲*/
 label[for="file"]{
   position: absolute;
-  top: 30px;
+  top: 28px;
   left: 8.5%;
-  width: 50%;
-  height: 32px;
+  width: 56%;
+  height: 35px;
 }
 label[for="file"]>input{
   position: absolute;
@@ -174,11 +174,12 @@ label[for="file"]>input{
   height: 100%;
   width: 100%;
   font-size: 17px;
-  color: #ccc;
-  background: rgb(32, 32, 32);
-  border: 1px solid #999;
-  border-radius: 10px;
-  transition: all .25s;
+  color: #aaa;
+  background: rgb(15, 15, 15);
+  border-radius: 5px;
+  transition: all .3s;
+  border: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 #upload{
   -webkit-appearance: none;
@@ -186,8 +187,8 @@ label[for="file"]>input{
   z-index: 10;
 }
 #upload:hover+input{
-  color: #fff;
-  border-color: #fff;
+  color: #c6c6c6;
+  background: rgb(20, 20, 20);
 }
 
 /*右侧主体部分*/
@@ -209,7 +210,7 @@ main{
   position: absolute;
   left: 5%;
   right: 5%;
-  top: 170px;
+  top: 165px;
   bottom: 15px;
   width: 90%;
   z-index: 0;
@@ -227,6 +228,7 @@ h1{
   height: 70px;
   line-height: 70px;
   font-size: 50px;
+  letter-spacing: 1px;
   margin: 4px auto;
 }
 
@@ -242,9 +244,9 @@ h1{
 }
 #type li{
   float: left;
-  height: 28px;
-  line-height: 28px;
-  width: 80px;
+  padding: 3px 0;
+  width: 90px;
+  font-family: initial;
   margin-bottom: 6px;
   border-top: 1px solid #fff;
   border-right: 1px solid #fff;
@@ -334,8 +336,7 @@ input[type="range"]::-moz-range-thumb{
   }
   #type li{
     width: 70px;
-    height: 23px;
-    line-height: 23px;
+    padding: 2px 0;
     margin-bottom: 2px;
   }
 }
@@ -351,9 +352,8 @@ input[type="range"]::-moz-range-thumb{
     font-size: 53px;
   }
   #type li{
-    width: 83px;
-    height: 30px;
-    line-height: 30px;
+    width: 93px;
+    padding: 4px 0;
     margin-bottom: 4px;
   }
   #nav ul li{
@@ -374,9 +374,8 @@ input[type="range"]::-moz-range-thumb{
     font-size: 55px;
   }
   #type li{
-    width: 85px;
-    height: 32px;
-    line-height: 32px;
+    width: 98px;
+    padding: 4px 0;
     margin-bottom: 5px;
     font-size: 18px;
   }
@@ -400,9 +399,8 @@ input[type="range"]::-moz-range-thumb{
     font-size: 58px;
   }
   #type li{
-    width: 87px;
-    height: 35px;
-    line-height: 35px;
+    width: 102px;
+    padding: 5px 0;
     margin-bottom: 7px;
     font-size: 20px;
   }
@@ -426,9 +424,8 @@ input[type="range"]::-moz-range-thumb{
     font-size: 62px;
   }
   #type li{
-    width: 90px;
-    height: 40px;
-    line-height: 40px;
+    width: 112px;
+    padding: 6px 0; 
     margin-bottom: 9px;
     font-size: 22px;
   }
